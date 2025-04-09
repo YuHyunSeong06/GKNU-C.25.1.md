@@ -54,3 +54,27 @@ int main() {
 	}
 }
 ```
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+	int a, b;
+	puts("Two value: ");
+	scanf("%d %d", &a, &b);
+	printf("%d\n", a + b);
+}
+```
+
+```c
+#include <stdio.h>
+
+int Add(int v[2]) {
+	return v[0] + v[1];
+}
+int main() {
+	int v[] = { 11,22 };
+	printf("%d\n", Add(v));
+}
+```
