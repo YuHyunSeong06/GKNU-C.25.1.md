@@ -78,3 +78,28 @@ int main() {
 	printf("%d\n", Add(v));
 }
 ```
+
+```c
+#include <stdio.h>
+
+int s = 0; // 전역변수, 자동 0
+int main() {
+	int i; // 지역변수
+	for (i = 1;i <= 1000;i++) {
+		s = s + i;
+		printf("%d ", s); //getchar();
+	}
+}
+```
+
+```c
+#include <stdio.h>
+
+int Add(int v[2]) {
+	return v[0] + v[1];
+}
+int main() {
+	int v[] = { 2,3 };
+	printf("%d", Add(v));
+}
+```
