@@ -63,7 +63,7 @@ void main() {
 void main() {
 	int a;
 	char c;
-	while(1) { // 무한반복 범위가 없기 때문
+	while(1) { // 무한반복 조건이 없기 때문
 		scanf_s("%d", &a);
 		a = a / 10;
 		switch (a) {
