@@ -139,7 +139,7 @@ int Add(int v[2]) { // 함수 Add의 매개변수를 배열로 선언
 }
 
 int main() {
-	int v[2] = { 2,3 };
+	int v[2] = { 2,3 }; // 배열 v[0]을 2 v[1]을 3으로 지정
 	printf("%d\n", Add(v));
 }
 ```
@@ -149,8 +149,9 @@ int main() {
 
 int main() {
 	int a, sum = 0;
-	for (a = 1;a < 101;a++) {
-		if (a % 2 == 0) {
+	for (a = 1;a < 101;a++) { // for 문의 구조 for(초기값; 범위; 증감값)
+				// 1부터 100까지 반복
+		if (a % 2 == 0) { // 짝수 판별 조건
 			sum += a;
 		}
 	}
@@ -159,30 +160,66 @@ int main() {
 ```
 
 ```c
-#include <stdio.h>
-
-int main() {
-	int a, sum = 0;
-	for (a = 1;a < 101;a++) {
-		if (a % 2 == 0) {
-			sum += a;
-		}
-	}
-	printf("%d\n", sum);
-}
-```
-
-```c
-#include <stdio.h>
 #include <stdio.h>
 
 int main() {
 	int p, q;
-	for (p = 2;p < 10;p++) {
-		printf("\n");
-		for (q = 1;q < 10;q++) {
-			printf("%d ", p * q);
+	for (p = 2;p < 10;p++) { // 2단부터 9단까지
+		printf("\n"); // 단이 바뀔때마다 엔터
+		for (q = 1;q < 10;q++) { // 1부터 9까지 곱하는값
+			printf("%d ", p * q); 출력
 		}
 	}
+}
+```
+
+```c
+#include<stdio.h>
+
+int main() {
+	int a;
+	do {
+		scanf_s("%d", &a); // a 를 입력받기
+		if (a > 0) { // 조건에 충족할 경우 아래 내용 실행
+			printf("a는 양수\n");
+		}
+		else { // if 문을 만족하지 못한경우 else 내용 실행
+			if (a == 0) {
+				printf("a는 0");
+			}
+			else printf("a는 음수");
+		}
+		printf("%d\n", a);
+	} while (1); // 무한반복
+}
+```
+
+```c
+#include<stdio.h>
+
+int main() {
+	int i, s=0; 
+	for (i = 1;i <= 10;i++) {// for 문의 구조 for(초기값; 범위; 증감값)
+		if (i == 5)break; // break는 반복문의 코드를 즉시 종료한다.
+		if (i == 3)continue; // countinue는 밑의 코드를 실행하지 않고 반복문의 처음으로 간다.
+		s = s + i;
+	}
+	printf("%d\n",s); 
+}
+```
+
+```c
+#include <stdio.h>
+
+int main() {
+	int i = 0, s = 0;
+	while (i <= 10){
+		s = s + i;
+		printf("i=%d, s=%d\n", i, s);
+		getchar(); // getchar는 내가 엔터키를 치기까지 기다린다
+		i = i + 1;
+	}
+	printf("%d\n", s);
+	return 0;
 }
 ```
