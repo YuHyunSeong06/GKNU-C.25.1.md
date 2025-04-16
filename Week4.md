@@ -81,3 +81,17 @@ void main() {
 
 }
 ```
+
+```c
+#include <stdio.h>
+
+void main() {
+	int a, b;
+	while (1) { // 무한 반복
+		scanf_s("%d%d", &a, &b); // a값, b값 입력받음
+		printf("%d\n", a + b); 
+		if (a == 0 && b == 0)
+			break; // if문 괄호 내의 범위가 맞을 시에 if문 break 실행
+	}
+}
+```
