@@ -95,3 +95,94 @@ void main() {
 	}
 }
 ```
+
+```c
+#include <stdio.h>
+
+int Add(int a, int b) { // 함수 구조: 반환형 함수명(매개변수){return 함수내용;}
+	return (a + b); // 함수 내용
+}
+
+void main() {
+	int a = 2, b = 3; // 변수 선언
+	printf("%d\n", Add(a, b)); // 출력
+}
+```
+
+```c
+#include <stdio.h>
+
+int main() {
+	FILE* fp = fopen("my.txt", "w"); // FILE 주소를 fp로 설정 my.txt 파일을 write 모드로 오픈
+	fprintf(fp, "22\n33"); // 파일 fp에다가 22와 33을 출력
+	fclose(fp); // 파일 닫기
+}
+```
+
+```c
+#include <stdio.h>
+
+int main() {
+	int a, b; // 변수 선언
+	FILE* fp = fopen("my.txt", "r"); // my.txt 파일을 read 모드로 오픈
+	fscanf_s(fp, "%d%d", &a, &b); // 파일에 있는 두수를 a, b로 대입
+	fclose(fp); // 파일 닫기
+	printf("%d\n", a + b); // 출력
+}
+```
+
+```c
+#include <stdio.h>
+
+int Add(int v[2]) { // 함수 Add의 매개변수를 배열로 선언
+	return v[0] + v[1];
+}
+
+int main() {
+	int v[2] = { 2,3 };
+	printf("%d\n", Add(v));
+}
+```
+
+```c
+#include <stdio.h>
+
+int main() {
+	int a, sum = 0;
+	for (a = 1;a < 101;a++) {
+		if (a % 2 == 0) {
+			sum += a;
+		}
+	}
+	printf("%d\n", sum);
+}
+```
+
+```c
+#include <stdio.h>
+
+int main() {
+	int a, sum = 0;
+	for (a = 1;a < 101;a++) {
+		if (a % 2 == 0) {
+			sum += a;
+		}
+	}
+	printf("%d\n", sum);
+}
+```
+
+```c
+#include <stdio.h>
+#include <stdio.h>
+
+int main() {
+	int p, q;
+	for (p = 2;p < 10;p++) {
+		printf("\n");
+		for (q = 1;q < 10;q++) {
+			printf("%d ", p * q);
+		}
+	}
+}
+```
