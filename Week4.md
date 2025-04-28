@@ -1,3 +1,4 @@
+# 축약연산자의 이해 증감
 ```c
 #include <stdio.h>
 
@@ -11,18 +12,20 @@ void main() {
 }
 ```
 
+# 메모리에 값 저장에 대한 이해, 작명규칙
 ```c
 #include<stdio.h>
 
 int main() {
 	int a_1, b_1, s_1; // 메모리에 정수 변수를 선언
-	a_1 = 2;
+	a_1 = 2; // 작명규칙으로 인해 첫 글자에는 무조건 영어 or _
 	b_1 = 3;
 	s_1 = a_1 + b_1;
 	printf("%d\n", s_1);
 }
 ```
 
+# if else문 구현
 ```c
 #include <stdio.h>
 
@@ -37,6 +40,7 @@ void main() {
 }
 ```
 
+# for문을 이용한 무한반복복
 ```c
 #include <stdio.h>
 
@@ -57,6 +61,7 @@ void main() {
 }
 ```
 
+# case문을 통한 성적분류
 ```c
 #include <stdio.h>
 
@@ -82,6 +87,7 @@ void main() {
 }
 ```
 
+# while문을 통한 무한 반복 두 수를 입력받아 두 수가 모두 0이면 멈춘다다
 ```c
 #include <stdio.h>
 
@@ -96,6 +102,7 @@ void main() {
 }
 ```
 
+# 함수를 이용한 덧셈
 ```c
 #include <stdio.h>
 
@@ -109,6 +116,7 @@ void main() {
 }
 ```
 
+# my.txt에 22와 3을 적기기
 ```c
 #include <stdio.h>
 
@@ -119,6 +127,7 @@ int main() {
 }
 ```
 
+# my.txt를 읽고 두 수를 더하기
 ```c
 #include <stdio.h>
 
@@ -131,6 +140,7 @@ int main() {
 }
 ```
 
+# 함수와 배열의 응용
 ```c
 #include <stdio.h>
 
@@ -140,10 +150,11 @@ int Add(int v[2]) { // 함수 Add의 매개변수를 배열로 선언
 
 int main() {
 	int v[2] = { 2,3 }; // 배열 v[0]을 2 v[1]을 3으로 지정
-	printf("%d\n", Add(v));
+	printf("%d\n", Add(v)); // 함수를 통해 배열을 호출 시에 배열 이름을 적는다
 }
 ```
 
+# for문을 이용한 1부터 100까지 수의 짝수 구분
 ```c
 #include <stdio.h>
 
@@ -159,6 +170,7 @@ int main() {
 }
 ```
 
+# for 문을 통한 2단부터 9단까지 출력력
 ```c
 #include <stdio.h>
 
@@ -173,6 +185,7 @@ int main() {
 }
 ```
 
+# if 문을 통한 양수, 0, 음수 구분
 ```c
 #include<stdio.h>
 
@@ -194,6 +207,7 @@ int main() {
 }
 ```
 
+# 1부터 10까지를 반복할때 continue의 이해해
 ```c
 #include<stdio.h>
 
@@ -208,6 +222,7 @@ int main() {
 }
 ```
 
+# while 문을 이용한 1부터 10의 합
 ```c
 #include <stdio.h>
 
