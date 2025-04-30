@@ -19,6 +19,35 @@ int main() { // 함수의 시작 {
 } // 함수의 끝 }
 ```
 
+## 함수 선언 3개의 변수
+
+```c
+#include <stdio.h>
+
+double Add(double a, double b,double c) {
+	double s = a + b + c;
+	return s;
+}
+
+int main() {
+	double a = 1.1, b = 2.2, c = 3.3;
+	double s = Add(a, b, c);
+	printf("%lf\n", s);
+}
+```
+
+## system 함수를 이용한 다양한 프로그램 실행
+
+```c
+#include <stdio.h>
+
+int main() {
+	system("mspaint.exe"); // 그림판 실행
+	system("notepad.exe"); // 메모장 실행
+	system("dir"); // 디렉토리 실행
+}
+```
+
 # 그래픽스
 
 #### 그래픽스중 openGL인 raylib 라이브러리를 통해 원 그리기
@@ -124,3 +153,20 @@ int main() {
 }
 ```
 
+### 원 3개 그리기
+
+```c
+#include "raylib.h"
+
+int main() {
+	InitWindow(640, 480, "HI");
+	while (!WindowShouldClose()) {
+		BeginDrawing();
+		DrawCircle(320, 40, 200, RED);
+		DrawCircle(120, 120, 200, GREEN);
+		DrawCircle(480, 360, 200, BLUE);
+		EndDrawing();
+	}
+	CloseWindow();
+}
+```
