@@ -24,6 +24,8 @@ int main() { // 함수의 시작 {
 #### 그래픽스중 openGL인 raylib 라이브러리를 통해 원 그리기
 #### 창을 하나로 바꾸는 법:
 #### 프로젝트 -> 속성 -> 링커 -> 시스템 -> 하위 시스템 : 창 (/SUBSYSTEM:WINDOWS) -> 고급 -> 진입점 : mainCRTStartup
+
+### 기본 창에 원 그리기
 ```c
 #include "raylib.h"
 
@@ -38,3 +40,83 @@ int main() {
 	CloseWindow();
 }
 ```
+
+### 마우스를 따라 원그리기
+```c
+#include "raylib.h"
+
+// 변수나 함수명에 '!'를 적을시 0 을 1 으로 1 을 0으로 바꾼다.
+int main() {
+	Vector2 m = { 320,240 }; // 구조체로 되어진 값 m.x와 m.y가 각각 값을 가진다
+
+	InitWindow(640, 480, "ANU"); // 크기가 가로 640, 세로 480 이름이 ANU인 창 생성
+
+	while (!WindowShouldClose()) { // WindowShouldClose가 아니면 반복한다 ( X 표시 누르기 전까지 반복)
+		BeginDrawing();
+		m = GetMousePosition(); // 마우스의 위치에 따라 m값이 변화한다.
+
+		DrawCircle(m.x, m.y, 16, MAGENTA); // 원을 ( 좌표값, 좌표값, 크기, 색상)으로 그림 ( 320, 240 좌표에 150의 핑크색 원을 그린다.)
+		EndDrawing();
+	}
+	CloseWindow();
+}
+```
+
+### 클릭할 시에 그려지는 원 그리기
+```c
+#include "raylib.h"
+
+// 변수나 함수명에 '!'를 적을시 0 을 1 으로 1 을 0으로 바꾼다.
+int main() {
+	InitWindow(640, 480, "ANU"); // 크기가 가로 640, 세로 480 이름이 ANU인 창 생성
+
+	while (!WindowShouldClose()) { // WindowShouldClose가 아니면 반복한다 ( X 표시 누르기 전까지 반복)
+		BeginDrawing();
+
+		if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
+			Vector2 m = GetMousePosition(); // m의 값을 마우스의 위치에 따라 설정한다
+			DrawCircle(m.x, m.y, 16, MAGENTA); // 원을 ( 좌표값, 좌표값, 크기, 색상)으로 그림 ( 320, 240 좌표에 150의 핑크색 원을 그린다.)
+		}
+		EndDrawing();
+	}
+	CloseWindow();
+}
+```
+
+### 계속 낙하하는 원 그리기
+```c
+#include "raylib.h"
+
+// 변수나 함수명에 '!'를 적을시 0 을 1 으로 1 을 0으로 바꾼다.
+int main() {
+	Vector2 m = { 320,240 }; // 구조체로 되어진 값 m.x와 m.y가 각각 값을 가진다
+
+	InitWindow(640, 480, "ANU"); // 크기가 가로 640, 세로 480 이름이 ANU인 창 생성
+
+	while (!WindowShouldClose()) { // WindowShouldClose가 아니면 반복한다 ( X 표시 누르기 전까지 반복)
+		BeginDrawing();
+		m = GetMousePosition(); // 마우스의 위치에 따라 m값이 변화한다.
+
+		DrawCircle(m.x, m.y, 16, MAGENTA); // 원을 ( 좌표값, 좌표값, 크기, 색상)으로 그림 ( 320, 240 좌표에 150의 핑크색 원을 그린다.)
+		EndDrawing();
+	}
+	CloseWindow();
+}
+```
+
+### 사각형 안에 원 그리기
+```c
+#include "raylib.h"
+
+int main() {
+	InitWindow(320, 240, "HI");
+	while (!WindowShouldClose()) {
+		BeginDrawing();
+		DrawRectangle(20, 20, 280, 200, VIOLET); // 사각형 그리기
+		DrawEllipse(160, 120, 140, 100, BLUE); // 사각형 안에 원 그리기
+		EndDrawing();
+	}
+	CloseWindow();
+}
+```
+
