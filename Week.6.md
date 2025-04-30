@@ -42,6 +42,7 @@ int main() {
 ```
 
 ### 마우스를 따라 원그리기
+
 ```c
 #include "raylib.h"
 
@@ -63,6 +64,7 @@ int main() {
 ```
 
 ### 클릭할 시에 그려지는 원 그리기
+
 ```c
 #include "raylib.h"
 
@@ -84,6 +86,7 @@ int main() {
 ```
 
 ### 계속 낙하하는 원 그리기
+
 ```c
 #include "raylib.h"
 
@@ -105,6 +108,7 @@ int main() {
 ```
 
 ### 사각형 안에 원 그리기
+
 ```c
 #include "raylib.h"
 
