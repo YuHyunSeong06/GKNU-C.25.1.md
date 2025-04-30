@@ -48,6 +48,58 @@ int main() {
 }
 ```
 
+# random 함수
+
+#### 사용된 함수 rand(), srand(), time()
+
+##### 주사위를 1000번 던졌을때 각각 나오는 눈의 개수
+```c
+// 기말 시험 1번 문항!!
+
+#include <stdio.h>
+#include <time.h>
+
+// rand 함수는 무작위 수를 추출한다
+
+int main() {
+	int i;
+	int h[6] = { 0,0,0,0,0,0 };
+
+	srand(time(NULL)); // 
+
+	for (i = 1; i <= 1000;i++) { // 범위
+		h[rand() % 6]++;
+	}
+	for (i = 0;i < 6;i++) {
+		printf("[%d]=%d\n", i, h[i]);
+	}
+}
+```
+
+##### 주사위를 던졌을때 확률 구하기
+
+```c
+#include <stdio.h>
+#include <time.h>
+#define NUM 10000
+
+// rand 함수는 무작위 수를 추출한다
+
+int main() {
+	int i;
+	int h[6] = { 0,0,0,0,0,0 };
+
+	srand(time(NULL)); // 
+
+	for (i = 1; i <= NUM;i++) { // 범위
+		h[rand() % 6]++;
+	}
+	for (i = 0;i < 6;i++) {
+		printf("[%d]=%f\n", i+1, (float)h[i]*100./NUM);
+	}
+}
+```
+
 # 그래픽스
 
 #### 그래픽스중 openGL인 raylib 라이브러리를 통해 원 그리기
