@@ -18,3 +18,23 @@ int main() { // 함수의 시작 {
 	printf("%d\n", *p); // *p는 포인터가 지정하는 주소의 값
 } // 함수의 끝 }
 ```
+
+# 그래픽스
+
+#### 그래픽스중 openGL인 raylib 라이브러리를 통해 원 그리기
+#### 창을 하나로 바꾸는 법:
+#### 프로젝트 -> 속성 -> 링커 -> 시스템 -> 하위 시스템 : 창 (/SUBSYSTEM:WINDOWS) -> 고급 -> 진입점 : mainCRTStartup
+```c
+#include "raylib.h"
+
+// 변수나 함수명에 '!'를 적을시 0 을 1 으로 1 을 0으로 바꾼다.
+int main() {
+	InitWindow(640, 480, "ANU"); // 크기가 가로 640, 세로 480 이름이 ANU인 창 생성
+	while (!WindowShouldClose()) { // WindowShouldClose가 아니면 반복한다 ( X 표시 누르기 전까지 반복)
+		BeginDrawing(); 
+		DrawCircle(640 / 2, 480 / 2, 150, MAGENTA); // 원을 ( 좌표값, 좌표값, 크기, 색상)으로 그림 ( 320, 240 좌표에 150의 핑크색 원을 그린다.)
+		EndDrawing();
+	}
+	CloseWindow();
+}
+```
