@@ -1,5 +1,7 @@
 # 포인터
 
+### 포인터는 메모리 주소를 저장하는 특별한 변수 데이터를 직접 저장하지 않고 간접 참조로 접근
+
 #### 기본 문제
 ```c
 #include <stdio.h>
@@ -108,12 +110,12 @@ int main() {
 ```c
 #include <stdio.h>
 
-struct Math {
+struct Math { // 구조체 생성
 	int a, b;
 }s;
 
 int main() {
-	struct Math s;
+	struct Math s; // 구조체 선언
 	s.a = 8, s.b = 2;
 	printf("%d\n", s.a + s.b);
 }
@@ -126,9 +128,10 @@ int main() {
 struct IA {
 	int a;
 	int b;
-}mb = { 8,2 };
+}mb = { 8,2 }; // 구조체의 구성을 구조체 뒤에 붙여서
 
 int main() {
+	// struct IA mb = { 8,2 }; 생략
 	printf("%d\n", mb.a + mb.b);
 }
 ```
@@ -140,10 +143,44 @@ int main() {
 typedef struct IA {
 	int a;
 	int b;
-} GG;
+} GG; // typedef를 통해 
 
 int main() {
 	GG t = { 4,6 };
 	printf("%d\n", t.a + t.b);
+}
+```
+
+#### 구조체의 포인터 사용
+```c
+#include <stdio.h>
+
+ struct IA { // a, b를 갖는 상자 생성
+	int a;
+	int b;
+};
+
+int main() {
+	struct IA mb = {8, 2}; // a 와 b 를 각각 8과 2를 담는다
+	struct IA* p; 
+	p = &mb;
+	printf("%d\n", p->a + p->b); // 구조체의 포인터를 선언 시에 '*' 대신에 '->'를 사용한다
+}
+```
+
+#### 응용 
+```c
+#include <stdio.h>
+
+ typedef struct S { // a, b를 갖는 상자 생성
+	int a;
+	int b;
+}Str;
+
+int main() {
+	Str mb = { 8, 2 }; // a 와 b 를 각각 8과 2를 담는다
+	Str* p;
+	p = &mb;
+	printf("%d\n", p->a + p->b); // 구조체의 포인터를 선언 시에 '*' 대신에 '->'를 사용한다
 }
 ```
