@@ -103,6 +103,7 @@ int main() {
 ```
 
 # 구조체
+
 #### 맛보기
 ```c
 #include <stdio.h>
@@ -115,5 +116,34 @@ int main() {
 	struct Math s;
 	s.a = 8, s.b = 2;
 	printf("%d\n", s.a + s.b);
+}
+```
+
+#### 구조체 선언 생략
+```c
+#include <stdio.h>
+
+struct IA {
+	int a;
+	int b;
+}mb = { 8,2 };
+
+int main() {
+	printf("%d\n", mb.a + mb.b);
+}
+```
+
+#### typedef를 통한 구조체 선언 방식 변경
+```c
+#include <stdio.h>
+
+typedef struct IA {
+	int a;
+	int b;
+} GG;
+
+int main() {
+	GG t = { 4,6 };
+	printf("%d\n", t.a + t.b);
 }
 ```
