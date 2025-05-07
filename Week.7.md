@@ -12,6 +12,7 @@ int main() {
 }
 ```
 
+#### 포인터의 주소 이해
 ```c
 #include <stdio.h>
 
@@ -29,6 +30,7 @@ int main() {
 }
 ```
 
+#### 포인터 기호의 이해해
 ```c
 #include <stdio.h>
 
@@ -76,5 +78,42 @@ char n[14] = "GKNU"; // n[0] n[1] n[2] n[3] n[4] NULL=='\0'
 int main() {
 	printf("%s", n);
 	printf("%x", n[1]); // ASCII 코드의 Hex값을 출력한다.
+}
+```
+
+### string.h 헤더파일 사용
+```c
+#include <stdio.h>
+#include <string.h> // strcpy(), strcat(), strcmp() 사용하는 헤더파일
+
+int main() {
+	char n1[80] = "HI!";
+	char n2[80] = " GKNU";
+	char n3[80];
+
+	printf("%s ", n1);
+	printf("%s ", n2);
+
+	strcpy(n3, 5, n1); // strcpy(대상,크기,값) string copy 크기에서는 NULL 값도 포함되어야 한다.
+	strcat(n3, 10, n2); // strcat(대상,크기,값) 대상의 문자 끝에 값을 이어붙인다. 
+	int n = strcmp(n1, n2); // strcmp(비교값, 비교값) 두 값을 비교해 같을 시 0을 출력 다를 시 1을 출력
+
+	printf("%s", n3);
+}
+```
+
+# 구조체
+#### 맛보기
+```c
+#include <stdio.h>
+
+struct Math {
+	int a, b;
+}s;
+
+int main() {
+	struct Math s;
+	s.a = 8, s.b = 2;
+	printf("%d\n", s.a + s.b);
 }
 ```
