@@ -18,3 +18,21 @@ int main()
 	printf("%d %d\n", n.a, n.b);
 }
 ```
+
+#### 학번과 점수 출력
+```c
+#include <stdio.h>
+
+typedef struct Student { // 구조체 선언
+	int id; 
+	double grade;
+}Student; // typedef를 이용한 단축
+
+int main() {
+	Student cs; // 구조체명 선언
+	cs.id = 1002;
+	cs.grade = 85.5;
+ // Stud me = { 1002,85.5 };로 단축 가능
+	printf("ID: %d, Score: %.1lf\n", cs.id, cs.grade); // 출력 주소 : 구조체명.변수이름
+}
+```
