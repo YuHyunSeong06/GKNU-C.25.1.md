@@ -29,7 +29,10 @@ int main(int argc, char* argv[]) {
     if (argv[2][0] == '*')
         printf("%d\n", a * b);
     if (argv[2][0] == '/')
-        용
+	printf("%d\n", a / b);
+}
+```
+### 버블정렬의 응용
 ```c
 #include <stdio.h>
 #include <memory.h>
