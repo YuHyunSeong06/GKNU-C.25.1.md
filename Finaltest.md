@@ -71,11 +71,14 @@ int main(int argc, char* argv[]) {
 int main(int argc, char* argv[]) {
     if (argc < 3) exit(0);
     printf("%s %s %s\n", argv[1], argv[2], argv[3]);
+
     int a = atoi(argv[1]);
     int b = atoi(argv[3]);
     int c=0;
+
     switch (argv[2][0]) {
-        case '+': c = a + b; break;
+        case '+': c = a + b;
+	break;
         case '-': c = a - b; break;
         case '*': c = a * b; break;
         case '/': c = a / b; break;
