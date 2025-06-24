@@ -79,10 +79,14 @@ int main(int argc, char* argv[]) {
     switch (argv[2][0]) {
         case '+': c = a + b;
 	break;
-        case '-': c = a - b; break;
-        case '*': c = a * b; break;
-        case '/': c = a / b; break;
-        default: break;
+        case '-': c = a - b;
+	break;
+        case '*':c = a * b;
+	break;
+        case '/': c = a / b;
+	break;
+        default:
+	break;
     }
     printf("%d\n", c);
     return 0;
