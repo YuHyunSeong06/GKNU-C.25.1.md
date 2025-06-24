@@ -20,3 +20,67 @@ int main() {
     for (i = 0; i < 6; i++)   printf("%d: %d\n", i + 1, c[i]);
 }
 ```
+
+### swap() 함수를 활용하여 매개변수로 전달된 두 수를 교환
+```c
+#include <stdio.h>
+
+void swap(int* a, int* b) { 
+	int t;
+	t = *a;
+	*a = *b;
+	*b = t;
+	return;
+}
+int main() {
+	int a = 3, b = 5;
+	printf("%d %d\n", a, b);
+	swap(&a, &b);
+	printf("%d %d\n", a, b);
+}
+```
+
+### 명령형 매개변수를 활용하여 사칙연산을 구현 - if문
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char* argv[]) {
+    if (argc < 3) exit(0);
+    printf("%s %s %s\n", argv[1], argv[2], argv[3]);
+
+    int a = atoi(argv[1]);
+    int b = atoi(argv[3]);
+
+    if(argv[2][0]=='+')
+        printf("%d\n", a + b);
+    if (argv[2][0] == '-')
+        printf("%d\n", a - b);
+    if (argv[2][0] == '*')
+        printf("%d\n", a * b);
+    if (argv[2][0] == '/')
+        printf("%d\n", a / b);
+    return 0;
+}
+```
+
+### 명령형 매개변수를 활용하여 사칙연산을 구현 - switch 문
+```c
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, char* argv[]) {
+    if (argc < 3) exit(0);
+    printf("%s %s %s\n", argv[1], argv[2], argv[3]);
+    int a = atoi(argv[1]);
+    int b = atoi(argv[3]);
+    int c=0;
+    switch (argv[2][0]) {
+        case '+': c = a + b; break;
+        case '-': c = a - b; break;
+        case '*': c = a * b; break;
+        case '/': c = a / b; break;
+        default: break;
+    }
+    printf("%d\n", c);
+    return 0;
+}
